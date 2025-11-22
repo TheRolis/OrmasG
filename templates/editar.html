@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Productos</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles3.css') }}">
+
+
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+    <a href="{{ url_for('crear_producto') }}" class="btn btn-primary btn-custom">Agregar Producto</a>
+    <a href="{{ url_for('home') }}" class="btn btn-secondary btn-custom">Home</a>
+</div>
+
+<button id="toggleSidebar" class="btn btn-dark toggle-btn">☰</button>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+            <img src="/static/solologo.jpg" alt="ORMAS G&V" height="40" class="me-2" />
+            <span class="fw-bold">ORMAS G&V S.A.S.</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="/">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="/productos">Productos</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('editar') }}">Editar Producto</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Contenido principal -->
+<div class="main-content">
+    <h2>Gestión de Productos</h2>
+
+    <table class="table table-dark table-striped mt-3">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Stock</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in productos %}
+            <tr>
+                <td>{{ producto[0] }}</td>
+                <td>
+                    {% if producto[4] %}
+                        <img src="{{ url_for('mostrar_imagen', id=producto[0]) }}" class="imagen-producto">
+                    {% else %}
+                        Sin imagen
+                    {% endif %}
+                </td>
+                <td>{{ producto[1] }}</td>
+                <td>${{ "{:,.0f}".format(producto[2]).replace(",", ".") }}</td>
+                <td>{{ producto[3] }}</td>
+                <td>
+                    {% if producto[3] == 0 %}
+                        <span class="text-danger">Agotado</span>
+                    {% else %}
+                        <span class="text-success">Disponible</span>
+                    {% endif %}
+                </td>
+                <td>
+                    <a href="{{ url_for('edicion', id=producto[0]) }}" class="btn btn-primary btn-sm">Editar</a>
+                    <a href="{{ url_for('eliminar', id=producto[0]) }}" class="btn btn-danger btn-sm" onclick="return confirm('¿Seguro que quieres eliminar este producto?');">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Footer -->
+<footer class="text-center mt-4 mb-4">
+    <p>© 2025 Cesar Gonzalez Villadiego - Ormas G&V S.A.S. Todos los derechos reservados.</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+const toggleBtn = document.getElementById("toggleSidebar");
+const sidebar = document.getElementById("sidebar");
+const mainContent = document.querySelector(".main-content");
+
+toggleBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("hide");
+    mainContent.classList.toggle("sidebar-hide");
+    if (sidebar.classList.contains("hide")) {
+        toggleBtn.style.left = "20px";
+    } else {
+        toggleBtn.style.left = "220px";
+    }
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+    sidebar.classList.add("hide");
+    mainContent.classList.add("sidebar-hide");
+    toggleBtn.style.left = "20px";
+});
+</script>
+
+</body>
+</html>

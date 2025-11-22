@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORMAS G&V S.A.S.</title>
+
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+        <div class="container">
+            <!-- Logo + texto -->
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <img src="/static/solologo.jpg" alt="ORMAS G&V S.A.S." height="40" class="me-2">
+                <span class="fw-bold">ORMAS G&V S.A.S.</span>
+            </a>
+
+            <!-- Botón collapse móvil -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú navegación -->
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="/">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="/productos">Productos</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('editar') }}">Editar Producto</a></li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO CON VIDEO -->
+    <section class="hero">
+        <video id="heroVideo" class="hero-video" autoplay muted loop playsinline>
+            <source src="/static/video/fondo.mp4" type="video/mp4">
+        </video>
+
+        <div class="hero-banner">
+            <h1>Estilo, Calidad y Elegancia</h1>
+        </div>
+    </section>
+
+   <!-- PRODUCTOS DESTACADOS -->
+<section class="py-5">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-4">Productos Destacados</h2>
+        <p class="text-muted mb-5">Explora nuestra selección premium de materiales y acabados</p>
+
+        <div class="row g-4">
+
+            <!-- PRODUCTO 1 -->
+            <div class="col-md-4">
+                <div class="card producto-card shadow-sm">
+                    <img src="/static/moldemosquetero.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Molde de Porcelana Tipo Mosquetero</h5>
+                        <p class="card-text text-muted">Acabado liso, Materia de alta resistencia.</p>
+                        <button type="button" class="btn btn-dark w-100" data-bs-toggle="modal" data-bs-target="#producto1Modal">
+                            Ver más
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Producto 1 -->
+<div class="modal fade" id="producto1Modal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold text-center w-100">Molde de Porcelana Tipo Mosquetero</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-justify"><strong>Descripción Técnica del Producto:</strong></p>
+        <p class="text-justify">Nuestros moldes en porcelana están diseñados para aplicaciones industriales y artesanales, ofreciendo alta precisión y resistencia térmica. Contamos con una amplia variedad de tallas y acabados, incluyendo moldes grabados y lisos, adaptados a las especificaciones técnicas de cada cliente.</p>
+        
+        <p class="text-justify"><strong>Propiedades Técnicas:</strong></p>
+<ul class="text-start">
+  <li><strong>Resistencia térmica:</strong> soporta temperaturas entre 120 °C y 150 °C.</li>
+  <li><strong>Acabado:</strong> color beige, superficie suave al tacto.</li>
+  <li><strong>Composición:</strong> formulación de porcelana a base de caolín, agua y aditivos químicos que permiten obtener una pasta homogénea y de alta consistencia.</li>
+</ul>
+
+        <div class="row g-3 mt-3">
+          <div class="col-6">
+            <img src="/static/moldemosquetero.jpg" class="img-fluid rounded shadow-sm">
+          </div>
+          <div class="col-6">
+            <img src="/static/moldemosquetero2.jpg" class="img-fluid rounded shadow-sm">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+            <!-- PRODUCTO 2 -->
+            <div class="col-md-4">
+                <div class="card producto-card shadow-sm">
+                    <img src="/static/bolas2.png" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Bolas de porcelana</h5>
+                        <p class="card-text text-muted">Bolas de porcelana de alta calidad, resistentes al desgaste y perfectas para procesos industriales o artesanales.
+                            Ideal para el procesamiento de materiales.</p>
+                        <button type="button" class="btn btn-dark w-100" data-bs-toggle="modal" data-bs-target="#producto2Modal">
+                            Ver más
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Producto 2 -->
+<div class="modal fade" id="producto2Modal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold text-center w-100">Bolas de porcelana</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-justify"><strong>Descripción Técnica:</strong></p>
+        <p class="text-justify">
+          Nuestras bolas de porcelana están diseñadas específicamente para procesos industriales de dispersión en la fabricación de guantes de látex, garantizando uniformidad, resistencia y durabilidad en la molienda de materiales. Disponibles en distintos tamaños para adaptarse a las necesidades de producción.
+        </p>
+
+        <p class="fw-bold text-start">Propiedades Técnicas:</p>
+        <ul class="text-start">
+          <li><strong>Resistencia térmica:</strong> quemadas a 1250 °C para máxima dureza y estabilidad dimensional.</li>
+          <li><strong>Acabado y durabilidad:</strong> color beige, superficie suave al tacto, alta resistencia al desgaste durante el molido.</li>
+          <li><strong>Composición:</strong> formuladas a base de caolín, feldespato, cuarzo, óxido de aluminio, silicato y agua, obteniendo una pasta homogénea y consistente para procesos industriales.</li>
+        </ul>
+
+        <div class="row g-3 mt-3">
+          <div class="col-6">
+            <img src="/static/bolas2.png" class="img-fluid rounded shadow-sm">
+          </div>
+          <div class="col-6">
+            <img src="/static/bolas2_2.jpg" class="img-fluid rounded shadow-sm">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+            <!-- PRODUCTO 3 -->
+            <div class="col-md-4">
+                <div class="card producto-card shadow-sm">
+                    <img src="/static/molde.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Diferentes texturas</h5>
+                        <p class="card-text text-muted">Explora diferentes texturas de porcelana para dar un acabado elegante e innovador a tus proyectos.</p>
+                        <button type="button" class="btn btn-dark w-100" data-bs-toggle="modal" data-bs-target="#producto3Modal">
+                            Ver más
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Producto 3 -->
+<div class="modal fade" id="producto3Modal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold text-center w-100">Diferentes texturas</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-justify"><strong>Descripción Técnica del Producto:</strong></p>
+        <p class="text-justify">
+          Nuestros moldes en porcelana están diseñados para aplicaciones industriales y artesanales, ofreciendo alta precisión, resistencia térmica y la posibilidad de personalización de texturas. Contamos con acabados en diamante y corrugado, adaptados a las necesidades específicas de cada cliente.
+        </p>
+
+        <p class="fw-bold text-start">Propiedades Técnicas:</p>
+        <ul class="text-start">
+          <li><strong>Resistencia térmica:</strong> soporta temperaturas entre 120 °C y 150 °C.</li>
+          <li><strong>Acabado:</strong> color beige, superficie suave al tacto.</li>
+          <li><strong>Composición:</strong> formulación de porcelana a base de caolín, agua y aditivos químicos que permiten obtener una pasta homogénea y de alta consistencia.</li>
+          <li><strong>Texturas disponibles:</strong> diamante y corrugado, con posibilidad de personalización según requerimientos del cliente.</li>
+        </ul>
+
+        <div class="row g-3 mt-3">
+          <div class="col-6">
+            <img src="/static/molde.jpg" class="img-fluid rounded shadow-sm">
+          </div>
+          <div class="col-6">
+            <img src="/static/molde2.jpg" class="img-fluid rounded shadow-sm">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+    <!-- FOOTER -->
+    <footer class="py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">© 2025 Cesar Gonzalez Villadiego - Ormas G&V S.A.S. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE MODERNO -->
+    <button type="button" class="btn contact-btn shadow-lg" data-bs-toggle="modal" data-bs-target="#contactModal">
+        <span class="contact-icon">💬</span>
+    </button>
+
+    <!-- MODAL DE CONTACTO -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fw-bold" id="contactModalLabel">Contáctanos</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <form id="contactForm">
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="mensaje" class="form-label">Mensaje</label>
+                <textarea class="form-control" id="mensaje" rows="3" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">Enviar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOTSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AJUSTE PERFECTO DEL VIDEO -->
+    <script>
+        const vid = document.getElementById("heroVideo");
+        function ajustarHero() {
+            if (vid.videoWidth && vid.videoHeight) {
+                const proporcion = vid.videoHeight / vid.videoWidth;
+                const ancho = vid.clientWidth;
+                const alto = ancho * proporcion;
+                document.querySelector(".hero").style.height = alto + "px";
+            }
+        }
+        vid.addEventListener("loadedmetadata", ajustarHero);
+        window.addEventListener("resize", ajustarHero);
+    </script>
+
+    <!-- JS formulario contacto -->
+    <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e){
+        e.preventDefault();
+        alert("¡Formulario enviado! Nos contactaremos contigo pronto.");
+        var modal = bootstrap.Modal.getInstance(document.getElementById('contactModal'));
+        modal.hide();
+        this.reset();
+    });
+    </script>
+
+</body>
+</html>

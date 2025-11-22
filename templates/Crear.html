@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Producto</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles2.css') }}">
+
+    <style>
+        body {
+            background-color: #faecdf;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-dark .navbar-brand {
+            color: #ffae78;
+            font-weight: bold;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 80px auto;
+            padding: 30px;
+            background: #151524;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(197, 104, 42, 0.5);
+        }
+
+        .form-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffa34d;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            border: none;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        .btn-group {
+            margin-top: 25px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn-guardar {
+            background-color: #030303;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn-guardar:hover {
+            background-color: #eea24c;
+        }
+
+        .btn-cancelar {
+            background-color: #000000;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-cancelar:hover {
+            background-color: #e9a359;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+            <img src="/static/solologo.jpg" alt="ORMAS G&V" height="40" class="me-2" />
+            <span class="fw-bold">ORMAS G&V S.A.S.</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="/">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="/productos">Productos</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('editar') }}">Editar Producto</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>S
+
+<!-- Contenedor del formulario -->
+<div class="form-container">
+    <h1>Agregar Producto</h1>
+    <form action="{{ url_for('agregar_producto') }}" method="POST" enctype="multipart/form-data">
+        <label for="nombre">Nombre del producto:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="precio">Precio:</label>
+        <input type="number" id="precio" name="precio" step="0.01" required>
+
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" name="cantidad" required>
+
+        <label for="imagen">Imagen del producto:</label>
+        <input type="file" id="imagen" name="imagen" accept="image/*">
+
+        <div class="btn-group">
+            <button type="submit" class="btn-guardar">Guardar</button>
+            <a href="{{ url_for('productos') }}" class="btn-cancelar">Cancelar</a>
+        </div>
+    </form>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Footer -->
+<footer style="margin-top:40px; padding: 15px; text-align:center; color:#000000;">
+    <p>© 2025 Cesar Gonzalez Villadiego - Ormas G&V S.A.S. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>

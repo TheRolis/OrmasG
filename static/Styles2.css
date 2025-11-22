@@ -1,0 +1,150 @@
+/* Navbar siempre encima */
+.navbar {
+    position: sticky; /* se mantiene al hacer scroll */
+    top: 0;
+    z-index: 1050; /* más alto que la sidebar */
+}
+
+/* Sidebar ajustada debajo del navbar */
+.sidebar {
+    position: fixed;
+    top: 70px; /* altura aproximada del navbar */
+    left: 0;
+    width: 200px;
+    height: calc(100% - 70px); /* ocupa todo menos el navbar */
+    background-color: #fcf0ea;
+    border-right: 3px solid #a84409;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: 4px 0 10px rgb(0, 0, 0);
+    z-index: 1000; /* debajo del navbar */
+}
+
+/* Sidebar botones */
+.sidebar a {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    color: #000000;
+    text-decoration: none;
+}
+
+.sidebar.hide {
+    transform: translateX(-220px); /* se mueve fuera de la pantalla */
+}
+
+.sidebar a:hover {
+    background-color: #a55205;
+    color: #330808;
+}
+
+/* Contenido principal */
+.main-content {
+    margin-left: 240px; /* espacio para sidebar */
+    padding: 30px;
+    background-color: #faecdf;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(252, 252, 252, 0.904);
+}
+.contact-btn {
+    position: fixed;
+    bottom: 50px;
+    right: 30px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #b35a06, #ebebeb);
+    color: #fff;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050;
+    border: none;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+    box-shadow: 0 4px 20px rgba(243, 3, 3, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.35);
+}
+
+.contact-icon {
+    display: inline-block;
+    animation: bounce 2s infinite;
+}
+
+/* Animaciones */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.toggle-btn {
+    position: fixed;
+    top: 80px;
+    left: 210px; /* Ajusta según el ancho de la sidebar */
+    z-index: 1100;
+    transition: left 0.3s ease;
+}
+
+/* Cuando la sidebar está oculta, movemos el botón a la izquierda */
+.sidebar.hide ~ .toggle-btn {
+    left: 20px; /* Ahora queda cerca del borde izquierdo */
+}
+
+.producto-card {
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.producto-card:hover {
+  transform: translateY(-5px);
+}
+
+.producto-card .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.placeholder-img {
+  width: 100%;
+  height: 200px;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ajustes de texto */
+.card-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-size: 0.9rem;
+}

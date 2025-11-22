@@ -1,0 +1,89 @@
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        /* Sidebar ajustada debajo del navbar */
+.sidebar {
+    position: fixed;
+    top: 70px; /* altura aproximada del navbar */
+    left: 0;
+    width: 200px;
+    height: calc(100% - 70px); /* ocupa todo menos el navbar */
+    background-color: #faecdf;
+    border-right: 3px solid #a84409;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: 4px 0 10px rgb(0, 0, 0);
+    z-index: 1000; /* debajo del navbar */
+}
+
+
+       /* Sidebar botones */
+.sidebar a {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    color: #000000;
+    text-decoration: none;
+}
+
+.sidebar.hide {
+    transform: translateX(-220px); /* se mueve fuera de la pantalla */
+}
+
+.sidebar a:hover {
+    background-color: #a55205;
+    color: #330808;
+}
+
+        .sidebar a {
+            display: block;
+            color: #fff;
+            padding: 10px;
+            margin-bottom: 5px;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+
+        .toggle-btn {
+            position: fixed;
+            top: 20px;
+            left: 220px;
+            z-index: 999;
+        }
+
+        .main-content {
+            margin-left: 220px;
+            padding: 20px;
+            transition: all 0.3s;
+        }
+
+        .sidebar-hide {
+            margin-left: 0;
+        }
+
+        .imagen-producto {
+            width: 80px;
+            height: auto;
+        }
+ .toggle-btn {
+    position: fixed;
+    top: 80px;
+    left: 210px; /* Ajusta según el ancho de la sidebar */
+    z-index: 1100;
+    transition: left 0.3s ease;
+}
+
+/* Cuando la sidebar está oculta, movemos el botón a la izquierda */
+.sidebar.hide ~ .toggle-btn {
+    left: 20px; /* Ahora queda cerca del borde izquierdo */
+}
