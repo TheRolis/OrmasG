@@ -53,7 +53,7 @@ def productos():
 # ------------------------------------------------
 @app.route('/crear', methods=['GET'])
 def crear_producto():
-    return render_template('crear.html')
+    return render_template('Crear.html')
 
 # ------------------------------------------------
 # Agregar producto (procesa POST)
