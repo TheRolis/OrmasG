@@ -20,7 +20,7 @@
         <div class="container">
             <!-- Logo + texto -->
             <a class="navbar-brand d-flex align-items-center" href="/">
-                <img src="/static/solologo.jpg" alt="ORMAS G&V S.A.S." height="40" class="me-2">
+               <img src="{{ url_for('static', filename='solologo.JPG') }}" alt="ORMAS G&V S.A.S." height="40" class="me-2">
                 <span class="fw-bold">ORMAS G&V S.A.S.</span>
             </a>
 
@@ -43,7 +43,7 @@
     <!-- HERO CON VIDEO -->
     <section class="hero">
         <video id="heroVideo" class="hero-video" autoplay muted loop playsinline>
-            <source src="/static/video/fondo.mp4" type="video/mp4">
+            <source src="{{ url_for('static', filename='video/fondo.mp4') }}" type="video/mp4">
         </video>
 
         <div class="hero-banner">
